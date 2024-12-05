@@ -11,7 +11,7 @@ function Expenses({ items }) {
     setYear(selectedYear);
   };
 
-  const filteredExpenses = items.filter((expense) => {
+  const filteredExpenses = year === 'all' ? items : items.filter((expense) => {
     return expense.date.getFullYear().toString() === year;
   });
 
